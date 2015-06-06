@@ -96,7 +96,8 @@ angular.module('checklist-model', [])
     terminal: true,
     scope: true,
     compile: function(tElement, tAttrs) {
-      if (tElement[0].tagName !== 'INPUT' || tAttrs.type !== 'checkbox') {
+      if ((tElement[0].tagName !== 'INPUT' || tAttrs.type !== 'checkbox') &&
+          tElement[0].tagName !== 'MD-CHECKBOX') {
         throw 'checklist-model should be applied to `input[type="checkbox"]`.';
       }
 
